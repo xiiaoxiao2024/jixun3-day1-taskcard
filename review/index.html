@@ -1,50 +1,424 @@
 <!doctype html>
-<html><head><meta charset="utf-8">
-<title>集训3 · 假期复习 Summer Vocabulary Review</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>集训3 · 假期阅读复习</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:url" content="https://jixun3-day1.rangel.club/review/">
-<meta http-equiv="refresh" content="0; url=day1/">
-<meta property="og:title" content="集训3 · 假期复习 Summer Vocabulary Review">
-<meta property="og:description" content="24 short reading passages mixing all 10 days' vocabulary, with audio, comprehension questions, and word review.">
+<meta property="og:title" content="集训3 · 假期阅读复习">
+<meta property="og:description" content="24篇假期阅读练习，跟读音频、理解问答、单词复习。">
 <meta property="og:image" content="https://jixun3-day1.rangel.club/review/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-body { font-family:-apple-system,"PingFang SC",sans-serif; max-width:640px; margin:60px auto; padding:0 20px; color:#3a2f4d; }
-h1 { font-size:1.6rem; }
-ul { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-li { background:#fff; border:1px solid #eee0c8; border-radius:10px; padding:10px 14px; }
-a { color:#4FB6E8; text-decoration:none; font-weight:600; }
+:root { --blue:#4FB6E8; --orange:#F0932B; --green:#3FA65A; --purple:#A06CD5; --red:#E0554F; --ink:#3a2f4d; --paper:#FFF9F0;
+  --t1:#7C3F58; --t1bg:#F3E4EA; --t2:#2F7A6B; --t2bg:#E2EFEC; --t3:#95691F; --t3bg:#F3EAD6; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI Rounded",-apple-system,"Comic Sans MS","PingFang SC",sans-serif; background:var(--paper); color:var(--ink); margin:0; padding:0 16px 80px; }
+.topbar { max-width:720px; margin:0 auto; padding:22px 0 6px; }
+.brand { font-size:1.5rem; font-weight:800; margin:0 0 2px; }
+.brand-sub { color:#8a7fa0; font-size:.92rem; margin:0 0 16px; }
+.picker { display:flex; flex-wrap:wrap; gap:8px; padding-bottom:6px; }
+.picker button { font: inherit; font-weight:700; font-size:.9rem; padding:8px 14px; border-radius:16px; border:2px solid #e4dcc8; background:#fff; color:var(--ink); cursor:pointer; }
+.picker button.active { background:var(--purple); border-color:var(--purple); color:#fff; }
+.picker button:hover:not(.active) { background:var(--paper); }
+.wrap { max-width:720px; margin:0 auto; }
+#loading { text-align:center; padding:60px 0; font-size:1.1rem; color:#8a7fa0; }
+.section { background:#fff; border-radius:22px; padding:26px 28px; margin-bottom:22px; box-shadow:0 8px 20px rgba(80,60,120,.10); }
+.section h1 { font-size:1.6rem; margin:0 0 4px; }
+.section h2 { font-size:1.3rem; margin:0 0 6px; }
+.section .sub { color:#8a7fa0; font-size:.9rem; margin:0 0 18px; }
+.legend { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.chip { display:inline-flex; align-items:center; gap:6px; font-size:.78rem; font-weight:700; padding:4px 10px 4px 7px; border-radius:20px; }
+.dot { width:8px; height:8px; border-radius:50%; }
+.chip.t1 { background:var(--t1bg); color:var(--t1); } .chip.t1 .dot { background:var(--t1); }
+.chip.t2 { background:var(--t2bg); color:var(--t2); } .chip.t2 .dot { background:var(--t2); }
+.chip.t3 { background:var(--t3bg); color:var(--t3); } .chip.t3 .dot { background:var(--t3); }
+audio { width:100%; margin-bottom:20px; }
+.story p { font-size:1.12rem; line-height:1.8; margin:0 0 16px; }
+.hl { border-radius:4px; padding:.02em .26em; font-weight:700; }
+.hl.t1 { background:var(--t1bg); color:var(--t1); }
+.hl.t2 { background:var(--t2bg); color:var(--t2); }
+.hl.t3 { background:var(--t3bg); color:var(--t3); }
+.qlist { display:flex; flex-direction:column; gap:12px; }
+.q { border:1px solid #eee0c8; border-radius:14px; padding:16px 18px; }
+.q .num { color:#8a7fa0; font-weight:800; margin-right:4px; }
+.q .qtext { font-size:1rem; line-height:1.5; }
+.q-opts { display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+.q-opt { background:#fff; border:2px solid #e4dcc8; border-radius:12px; padding:10px 14px; font-size:.95rem; cursor:pointer; text-align:left; font-family:inherit; color:var(--ink); }
+.q-opt:hover:not(:disabled) { background:var(--paper); }
+.q-opt:disabled { cursor:default; }
+.q-opt.opt-correct { background:#dff3e2; border-color:var(--green); }
+.q-opt.opt-wrong { background:#fbdada; border-color:var(--red); }
+.q-feedback { margin-top:6px; font-weight:700; font-size:.9rem; }
+.q-feedback.good { color:#1e6b34; } .q-feedback.bad { color:#a3402e; }
+.q .answer { margin-top:6px; font-size:.9rem; background:var(--paper); border-left:3px solid var(--blue); padding:8px 12px; border-radius:0 8px 8px 0; }
+.gate { text-align:center; padding:20px; }
+.gate p { font-size:1.05rem; margin:0 0 14px; }
+.start-btn { display:inline-block; background:var(--purple); color:#fff; border:none; border-radius:20px; padding:14px 30px; font-weight:800; font-size:1.1rem; cursor:pointer; }
+#review-wrap { display:none; }
+#review-wrap.unlocked { display:block; }
+.progress { display:flex; justify-content:center; gap:18px; margin-bottom:18px; font-weight:700; }
+.progress .known { color:#1e6b34; } .progress .left { color:#a35a12; } .progress .round { color:#5c3a80; }
+#screen-swipe, #screen-complete, #screen-practice { display:none; }
+#screen-swipe.active, #screen-complete.active, #screen-practice.active { display:block; }
+.card { background:#fff; border-radius:24px; padding:40px 26px; text-align:center; box-shadow:0 10px 24px rgba(80,60,120,.12); min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:2px solid #f0e6d0; }
+.card .word { font-size:2.6rem; font-weight:900; }
+.card .pos { color:#8a7fa0; font-size:1.05rem; margin-top:4px; }
+.reveal-btn { margin-top:16px; background:var(--blue); color:#fff; border:none; border-radius:14px; padding:9px 20px; font-weight:700; font-size:1rem; cursor:pointer; }
+.card .meaning { margin-top:14px; display:none; }
+.card .meaning.shown { display:block; }
+.card .cn { font-size:1.4rem; font-weight:700; color:#a35a2a; }
+.card .def { font-size:1.02rem; color:#6a5f80; margin-top:6px; }
+.judge-btns { display:flex; gap:14px; margin-top:20px; }
+.judge-btns button { flex:1; font-size:1.05rem; font-weight:800; padding:14px; border:none; border-radius:18px; cursor:pointer; color:#fff; }
+.btn-know { background:var(--green); }
+.btn-unsure { background:var(--orange); }
+.stop-early { display:block; margin:16px auto 0; background:none; border:none; color:#8a7fa0; text-decoration:underline; cursor:pointer; font-size:.9rem; }
+.big-emoji { font-size:3rem; text-align:center; }
+.center { text-align:center; }
+.listen-btn { background:var(--orange); color:#fff; border:none; border-radius:14px; padding:8px 18px; font-weight:700; cursor:pointer; font-size:1rem; margin-bottom:8px; }
+.result { margin-top:10px; font-weight:700; }
+.result.good { color:#1e6b34; } .result.bad { color:#a3402e; }
+.pra-options { display:flex; flex-direction:column; gap:10px; margin-top:20px; }
+.pra-opt { background:#fff; border:2px solid #e4dcc8; border-radius:14px; padding:12px 16px; font-size:1.02rem; cursor:pointer; text-align:left; font-family:inherit; }
+.pra-opt.opt-correct { background:#dff3e2; border-color:var(--green); }
+.pra-opt.opt-wrong { background:#fbdada; border-color:var(--red); }
+.pra-opt:disabled { cursor:default; }
 </style>
-</head><body>
-<h1>集训3 · 假期复习 · 24 Days</h1>
-<p>Redirecting to Day 1... <a href="day1/">Click here if not redirected</a></p>
-<ul>
-<li><a href="day1/">Day 1 · The Big Show</a></li>
-<li><a href="day2/">Day 2 · Coco the Rabbit</a></li>
-<li><a href="day3/">Day 3 · Sandcastle by the Lake</a></li>
-<li><a href="day4/">Day 4 · The Talent Show Trick</a></li>
-<li><a href="day5/">Day 5 · The Birdhouse Farm</a></li>
-<li><a href="day6/">Day 6 · The Locked Box</a></li>
-<li><a href="day7/">Day 7 · The Bird in the Yard</a></li>
-<li><a href="day8/">Day 8 · Before the Flood</a></li>
-<li><a href="day9/">Day 9 · The Scavenger Hunt</a></li>
-<li><a href="day10/">Day 10 · The Art Fair Boat</a></li>
-<li><a href="day11/">Day 11 · The Camp Dog</a></li>
-<li><a href="day12/">Day 12 · The Treehouse Storm</a></li>
-<li><a href="day13/">Day 13 · Zoe's Stage Fright</a></li>
-<li><a href="day14/">Day 14 · Maya's Drama Exam</a></li>
-<li><a href="day15/">Day 15 · Lake Trip Bird Project</a></li>
-<li><a href="day16/">Day 16 · Zara's Story</a></li>
-<li><a href="day17/">Day 17 · The Poem</a></li>
-<li><a href="day18/">Day 18 · Jake and Sam's Treehouse</a></li>
-<li><a href="day19/">Day 19 · The Cabin Tradition</a></li>
-<li><a href="day20/">Day 20 · Zoe's Desert Exhibit</a></li>
-<li><a href="day21/">Day 21 · The Injured Seagull</a></li>
-<li><a href="day22/">Day 22 · Grandpa's Story</a></li>
-<li><a href="day23/">Day 23 · The Ancient Dig Site</a></li>
-<li><a href="day24/">Day 24 · The Wilderness Weekend</a></li>
-</ul>
-</body></html>
+</head>
+<body>
+<div class="topbar">
+  <p class="brand">集训3 · 假期阅读复习</p>
+  <p class="brand-sub">每天一篇小短文，听一听、读一读、做几道题，再复习几个词。</p>
+  <div class="picker" id="picker"></div>
+</div>
+<div class="wrap">
+  <div id="loading">加载中…</div>
+  <div id="content" style="display:none">
+    <div class="section">
+      <h1 id="p-title"></h1>
+      <p class="sub">先听一听音频，再读一读故事。</p>
+      <div class="legend">
+        <span class="chip t1"><span class="dot"></span>核心词</span>
+        <span class="chip t2"><span class="dot"></span>常见词</span>
+        <span class="chip t3"><span class="dot"></span>认识词</span>
+      </div>
+      <audio controls id="p-audio"></audio>
+      <div class="story" id="p-story"></div>
+    </div>
+
+    <div class="section">
+      <h2>读一读，答一答</h2>
+      <p class="sub">5道小问题，点一下答案就知道对不对。</p>
+      <div class="qlist" id="p-questions"></div>
+    </div>
+
+    <div class="section" id="gate-section">
+      <div class="gate">
+        <div class="big-emoji">🔁</div>
+        <p>都答完了吗？来复习一下这些词吧。</p>
+        <button class="start-btn" onclick="unlockReview()">开始复习</button>
+      </div>
+    </div>
+
+    <div id="review-wrap" class="section">
+      <h2>复习词汇</h2>
+      <div id="screen-intro">
+        <div class="center">
+          <p style="font-size:1.02rem">看到每个单词，先想一想你认不认识。</p>
+          <p style="font-size:1.02rem; margin-top:10px">✅ 认识 — 不会再出现　　❓ 不确定 — 之后会再考你一次</p>
+          <button class="start-btn" onclick="startSwipe()">开始</button>
+        </div>
+      </div>
+      <div id="screen-swipe">
+        <div class="progress">
+          <span class="round" id="roundLabel">Word 1</span>
+          <span class="known" id="knownLabel">已认识: 0</span>
+          <span class="left" id="leftLabel">不确定: 0</span>
+        </div>
+        <div class="card">
+          <div class="word" id="cardWord"></div>
+          <div class="pos" id="cardPos"></div>
+          <button class="reveal-btn" id="revealBtn" onclick="revealMeaning()">👁 看意思</button>
+          <div class="meaning" id="cardMeaning">
+            <div class="cn" id="cardCn"></div>
+            <div class="def" id="cardDef"></div>
+          </div>
+        </div>
+        <div class="judge-btns">
+          <button class="btn-know" onclick="judge(true)">✅ 认识</button>
+          <button class="btn-unsure" onclick="judge(false)">❓ 不确定</button>
+        </div>
+        <button class="stop-early" onclick="finishEarly()">先不分类了，直接练习不确定的词</button>
+      </div>
+      <div id="screen-complete">
+        <div class="center">
+          <div class="big-emoji">🎉</div>
+          <h2>全部看完啦！</h2>
+          <p id="completeMsg" style="font-size:1.02rem"></p>
+          <button class="start-btn" onclick="goToPractice()">练习不确定的词</button>
+        </div>
+      </div>
+      <div id="screen-practice"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+var N_PASSAGES = 24;
+var current = null;
+var cache = {};
+var VOCAB = {}, TTS_AUDIO = {}, ALL_WORDS = [];
+
+var picker = document.getElementById('picker');
+for (var i = 1; i <= N_PASSAGES; i++) {
+  (function(n) {
+    var b = document.createElement('button');
+    b.textContent = '第' + n + '篇';
+    b.onclick = function() { loadPassage(n); };
+    b.id = 'pick-' + n;
+    picker.appendChild(b);
+  })(i);
+}
+
+function setActivePicker(n) {
+  for (var i = 1; i <= N_PASSAGES; i++) {
+    document.getElementById('pick-' + i).classList.toggle('active', i === n);
+  }
+}
+
+function loadPassage(n) {
+  current = n;
+  setActivePicker(n);
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('loading').textContent = '加载中…';
+  if (cache[n]) {
+    renderPassage(cache[n]);
+    return;
+  }
+  fetch('data/passage_' + n + '.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      cache[n] = data;
+      renderPassage(data);
+    })
+    .catch(function(e) {
+      document.getElementById('loading').textContent = '加载失败，请重新点一下上面的篇目。';
+    });
+}
+
+function renderPassage(data) {
+  VOCAB = data.vocab;
+  TTS_AUDIO = data.tts_audio;
+  ALL_WORDS = Object.keys(VOCAB);
+
+  document.getElementById('p-title').textContent = data.title;
+  document.getElementById('p-audio').src = 'data:audio/mp3;base64,' + data.readalong_b64;
+  document.getElementById('p-story').innerHTML = data.story_html;
+
+  var qhtml = '';
+  data.questions.forEach(function(q, idx) {
+    qhtml += mcqHtml(idx + 1, q);
+  });
+  document.getElementById('p-questions').innerHTML = qhtml;
+
+  document.getElementById('gate-section').style.display = 'block';
+  document.getElementById('review-wrap').classList.remove('unlocked');
+  document.getElementById('review-wrap').style.display = 'none';
+  show('screen-intro');
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function mcqHtml(num, q) {
+  var btns = '';
+  q.options.forEach(function(opt, i) {
+    var letter = opt[0], text = opt[1];
+    var isCorrect = (i === q.correct_idx);
+    btns += '<button class="q-opt" data-correct="' + (isCorrect ? '1' : '0') + '" ' +
+      'onclick="checkMCQ(this, ' + isCorrect + ', \'q' + num + '\')">' + letter + ') ' + text + '</button>';
+  });
+  return '<div class="q" id="q' + num + '">' +
+    '<span class="num">' + num + '</span><span class="qtext">' + q.qtext + '</span>' +
+    '<div class="q-opts">' + btns + '</div>' +
+    '<div class="q-feedback" id="q' + num + '-feedback"></div>' +
+    '<div class="answer" id="q' + num + '-explain" style="display:none">' + q.explain + '</div>' +
+    '</div>';
+}
+
+function checkMCQ(btn, isCorrect, qid) {
+  var opts = document.querySelectorAll('#' + qid + ' .q-opt');
+  opts.forEach(function(o) {
+    o.disabled = true;
+    if (o.getAttribute('data-correct') === '1') o.classList.add('opt-correct');
+  });
+  if (!isCorrect) btn.classList.add('opt-wrong');
+  var fb = document.getElementById(qid + '-feedback');
+  fb.textContent = isCorrect ? '答对了！✅' : '不对哦，正确答案已经标出来了。❌';
+  fb.className = 'q-feedback ' + (isCorrect ? 'good' : 'bad');
+  document.getElementById(qid + '-explain').style.display = 'block';
+}
+
+function unlockReview() {
+  document.getElementById('review-wrap').style.display = 'block';
+  document.getElementById('review-wrap').classList.add('unlocked');
+  document.getElementById('gate-section').style.display = 'none';
+  document.getElementById('review-wrap').scrollIntoView({behavior:'smooth'});
+}
+
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function show(id) {
+  ['screen-intro','screen-swipe','screen-complete','screen-practice'].forEach(function(s) {
+    document.getElementById(s).classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+var queue = [], idx = 0, nextRoundWeak = [], knownCount = 0;
+
+function startSwipe() {
+  queue = shuffle(ALL_WORDS); idx = 0; nextRoundWeak = []; knownCount = 0;
+  show('screen-swipe'); updateProgress(); showCard();
+}
+function updateProgress() {
+  document.getElementById('roundLabel').textContent = (idx + 1) + ' / ' + queue.length;
+  document.getElementById('knownLabel').textContent = '已认识: ' + knownCount;
+  document.getElementById('leftLabel').textContent = '不确定: ' + nextRoundWeak.length;
+}
+function showCard() {
+  var w = queue[idx];
+  document.getElementById('cardWord').textContent = w;
+  document.getElementById('cardPos').textContent = VOCAB[w].pos;
+  document.getElementById('cardCn').textContent = VOCAB[w].cn;
+  document.getElementById('cardDef').textContent = VOCAB[w].def;
+  document.getElementById('cardMeaning').classList.remove('shown');
+  document.getElementById('revealBtn').style.display = 'inline-block';
+}
+function revealMeaning() {
+  document.getElementById('cardMeaning').classList.add('shown');
+  document.getElementById('revealBtn').style.display = 'none';
+}
+function judge(knowsIt) {
+  if (knowsIt) { knownCount++; } else { nextRoundWeak.push(queue[idx]); }
+  idx++;
+  if (idx >= queue.length) { finishPass(); return; }
+  updateProgress(); showCard();
+}
+function finishPass() {
+  if (nextRoundWeak.length === 0) { showComplete(); return; }
+  buildPractice(nextRoundWeak);
+}
+function finishEarly() {
+  var remaining = queue.slice(idx);
+  var stillWeak = Array.from(new Set(nextRoundWeak.concat(remaining)));
+  buildPractice(stillWeak);
+}
+function showComplete() {
+  document.getElementById('completeMsg').textContent = '这些词你都认识，真棒！';
+  show('screen-complete');
+}
+function goToPractice() { buildPractice(shuffle(ALL_WORDS).slice(0, 15)); }
+
+var PRACTICE_FORMATS = ['mcq', 'listen', 'mcqrev'];
+var PRACTICE_LABELS = { mcq: '选意思', listen: '听音选词', mcqrev: '根据中文选单词' };
+var praWords = [], praIdx = 0, praWrong = [], praFormatIdx = 0;
+
+function sampleOther(word, n) {
+  var pool = ALL_WORDS.filter(function(w) { return w !== word; });
+  return shuffle(pool).slice(0, n);
+}
+function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+var currentAudio = null;
+function speakWord(word) {
+  var b64 = TTS_AUDIO[word];
+  if (!b64) { return; }
+  if (currentAudio) { currentAudio.pause(); }
+  currentAudio = new Audio('data:audio/mp3;base64,' + b64);
+  currentAudio.play();
+}
+function buildPractice(weakWords) {
+  if (weakWords.length === 0) {
+    document.getElementById('screen-practice').innerHTML =
+      '<div class="center"><div class="big-emoji">🌟</div><h2>都认识！</h2><p>今天这些词都掌握了。</p></div>';
+    show('screen-practice');
+    return;
+  }
+  praFormatIdx = 0;
+  startPracticeRound(weakWords);
+}
+function startPracticeRound(words) {
+  praWords = shuffle(words); praIdx = 0; praWrong = [];
+  show('screen-practice'); showPracticeCard();
+}
+function optionButton(label, isCorrect, word) {
+  return '<button class="pra-opt" data-correct="' + (isCorrect ? '1' : '0') + '" onclick="answerPractice(this,' +
+    (isCorrect ? 'true' : 'false') + ',\'' + word + '\')">' + label + '</button>';
+}
+function showPracticeCard() {
+  var format = PRACTICE_FORMATS[praFormatIdx % PRACTICE_FORMATS.length];
+  var w = praWords[praIdx];
+  var cardHtml, optsHtml;
+  if (format === 'mcq') {
+    cardHtml = '<div class="word">' + w + '</div><div class="pos">' + VOCAB[w].pos + '</div>';
+    var correct = VOCAB[w].cn + ' — ' + VOCAB[w].def;
+    var opts = shuffle(sampleOther(w, 3).map(function(o) { return VOCAB[o].cn + ' — ' + VOCAB[o].def; }).concat([correct]));
+    optsHtml = opts.map(function(opt) { return optionButton(escapeHtml(opt), opt === correct, w); }).join('');
+  } else if (format === 'listen') {
+    cardHtml = '<button class="listen-btn" type="button" onclick="speakWord(\'' + w + '\')">🔊 播放</button>';
+    var opts2 = shuffle(sampleOther(w, 3).concat([w]));
+    optsHtml = opts2.map(function(opt) { return optionButton(opt, opt === w, w); }).join('');
+  } else {
+    cardHtml = '<div class="cn" style="font-size:1.7rem">' + VOCAB[w].cn + '</div><div class="def">' + VOCAB[w].def + '</div>';
+    var opts3 = shuffle(sampleOther(w, 3).concat([w]));
+    optsHtml = opts3.map(function(opt) { return optionButton(opt, opt === w, w); }).join('');
+  }
+  document.getElementById('screen-practice').innerHTML =
+    '<div class="progress"><span class="round">' + PRACTICE_LABELS[format] + '</span>' +
+    '<span class="left">' + (praIdx + 1) + ' / ' + praWords.length + '</span></div>' +
+    '<div class="card">' + cardHtml + '</div>' +
+    '<div class="pra-options">' + optsHtml + '</div>' +
+    '<div id="pra-feedback"></div>';
+}
+function answerPractice(btn, isCorrect, word) {
+  var opts = document.querySelectorAll('.pra-opt');
+  opts.forEach(function(o) {
+    o.disabled = true;
+    if (o.getAttribute('data-correct') === '1') o.classList.add('opt-correct');
+  });
+  if (!isCorrect) { btn.classList.add('opt-wrong'); praWrong.push(word); }
+  document.getElementById('pra-feedback').innerHTML =
+    isCorrect ? '<p class="result good">答对了！✅</p>' : '<p class="result bad">不对哦 ❌</p>';
+  setTimeout(nextPracticeCard, isCorrect ? 700 : 1100);
+}
+function nextPracticeCard() {
+  praIdx++;
+  if (praIdx >= praWords.length) {
+    if (praWrong.length === 0) {
+      document.getElementById('screen-practice').innerHTML =
+        '<div class="center"><div class="big-emoji">🎉</div><h2>全部掌握！</h2><p>今天复习完成。</p></div>';
+      return;
+    }
+    praFormatIdx++;
+    startPracticeRound(praWrong);
+    return;
+  }
+  showPracticeCard();
+}
+
+loadPassage(1);
+</script>
+</body>
+</html>
