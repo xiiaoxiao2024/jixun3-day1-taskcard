@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>集训3 Day 1 Task Card · Characters &amp; Feelings</title>
+<title>集训3 Day 1 Task Card · The New Student</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="集训3 Day 1 · Characters &amp; Feelings">
-<meta property="og:description" content="Videos, reading, and Words Review vocabulary practice for Day 1.">
-<meta property="og:image" content="https://jixun3-day1-taskcard.onrender.com/og-cover.png">
+<meta property="og:title" content="集训3 Day 1 · The New Student">
+<meta property="og:description" content="Reading, review video, and Words Review vocabulary practice for Day 1.">
+<meta property="og:image" content="https://jixun3-day1.rangel.club/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jixun3-day1-taskcard.onrender.com/">
+<meta property="og:url" content="https://jixun3-day1.rangel.club/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root { --blue:#4FB6E8; --orange:#F0932B; --green:#3FA65A; --purple:#A06CD5; --ink:#241a3d; --paper:#FAF7F2; }
@@ -22,40 +22,34 @@ body { margin:0; font-family:"Segoe UI Rounded",-apple-system,"Comic Sans MS","P
               radial-gradient(circle at 80% 80%, rgba(160,108,213,.28), transparent 40%),
               linear-gradient(160deg, #1b1230, #241a3d 60%, #2a1f42); color:#fff; }
 .hero .eyebrow { color:#C7B8E0; font-size:15px; letter-spacing:2px; margin-bottom:10px; }
-.hero h1 { font-size:56px; font-weight:900; margin:0 0 10px; }
-.hero .sub { color:#F5D9A8; font-size:22px; font-weight:700; margin-bottom:26px; }
+.hero h1 { font-size:52px; font-weight:900; margin:0 0 10px; }
+.hero .sub { color:#F5D9A8; font-size:20px; font-weight:700; margin-bottom:26px; }
 .hero .chips { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-.hero .chip { padding:10px 22px; border-radius:20px; color:#fff; font-weight:800; font-size:15px; }
-.c1 { background:var(--blue); } .c2 { background:var(--green); } .c3 { background:var(--orange); }
+.hero .chip { padding:10px 22px; border-radius:20px; color:#fff; font-weight:800; font-size:14px; }
+.c1 { background:var(--blue); } .c2 { background:var(--orange); } .c3 { background:var(--purple); } .c4 { background:var(--green); }
 .wrap { max-width:840px; margin:-40px auto 60px; padding:0 20px; position:relative; z-index:2; }
 .step { background:#fff; border-radius:26px; padding:34px 36px; margin-bottom:28px; box-shadow:0 14px 34px rgba(36,26,61,.10); }
 .step-num { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%;
   color:#fff; font-weight:900; font-size:18px; margin-right:10px; }
 .step h2 { display:flex; align-items:center; font-size:1.5rem; margin:0 0 6px; }
 .step .desc { color:#8a7fa0; margin:0 0 22px; font-size:1.02rem; }
-.video-row { display:grid; grid-template-columns:1fr; gap:20px; }
-.video-card { background:#faf6ef; border-radius:18px; padding:16px; }
-.video-card .label { font-weight:800; margin-bottom:10px; font-size:1.05rem; }
-.video-card.round1 .label { color:var(--blue); }
-.video-card.round2 .label { color:var(--orange); }
 video, audio { width:100%; border-radius:12px; }
-.tier-group { margin-bottom:26px; }
-.tier-label { font-weight:900; font-size:1.2rem; margin-bottom:10px; }
-.passage { background:#faf6ef; border-radius:16px; padding:18px 20px; margin-bottom:14px; }
-.passage-head { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
-.tier-tag { color:#fff; font-weight:800; padding:3px 12px; border-radius:12px; font-size:.85rem; }
-.passage-head h4 { margin:0; font-size:1.1rem; }
-.passage-text { margin-top:10px; font-size:1rem; line-height:1.7; color:#3a2f4d; }
-.record-box { background:#F3ECF9; border:2px dashed var(--purple); border-radius:18px; padding:22px; margin-top:10px; text-align:center; }
+.passage-text { margin-top:16px; font-size:1.1rem; line-height:1.8; color:#3a2f4d; background:#faf6ef; border-radius:16px; padding:20px 24px; }
+.hl-new { background:#FFE9A8; color:#1F6A8C; font-weight:800; padding:1px 5px; border-radius:6px; }
+.legend { font-size:.9rem; color:#8a7fa0; margin-top:10px; }
+.legend span { font-weight:800; }
+.record-box { background:#F3ECF9; border:2px dashed var(--purple); border-radius:18px; padding:22px; margin-top:16px; text-align:center; }
 .record-box .warn { font-size:.85rem; color:#8a7fa0; margin-top:10px; }
 .rec-btn { font: inherit; font-weight:800; padding:12px 26px; border:none; border-radius:20px; cursor:pointer; margin:0 6px; color:#fff; }
 .rec-start { background:var(--purple); } .rec-stop { background:#E0554F; }
 .rec-btn:disabled { opacity:.4; cursor:default; }
-#recStatus { margin-top:10px; font-weight:700; min-height:22px; }
-#recPlayback { margin-top:12px; }
+.rec-status { margin-top:10px; font-weight:700; min-height:22px; }
+.rec-playback { margin-top:12px; }
 .wordsreview-btn { display:block; text-align:center; background:linear-gradient(120deg,var(--orange),#e0554f); color:#fff;
   font-weight:900; font-size:1.3rem; padding:22px; border-radius:20px; text-decoration:none; box-shadow:0 12px 28px rgba(240,147,43,.35); }
 .wordsreview-btn:hover { opacity:.94; }
+.word-list { font-size:1rem; color:#3a2f4d; background:#faf6ef; border-radius:14px; padding:14px 18px; margin-top:12px; }
+.word-list b { color:#1F6A8C; }
 footer { text-align:center; color:#a89bc4; padding:30px; font-size:.9rem; }
 </style>
 </head>
@@ -64,10 +58,10 @@ footer { text-align:center; color:#a89bc4; padding:30px; font-size:.9rem; }
 <div class="hero">
   <div class="eyebrow">集训3 &nbsp;·&nbsp; TASK CARD</div>
   <h1>Day 1</h1>
-  <div class="sub">Characters &amp; Feelings</div>
+  <div class="sub">The New Student</div>
   <div class="chips">
-    <div class="chip c1">Step 1 · Videos</div>
-    <div class="chip c2">Step 2 · Reading</div>
+    <div class="chip c1">Step 1 · Reading</div>
+    <div class="chip c2">Step 2 · Review Video</div>
     <div class="chip c3">Step 3 · Words Review</div>
   </div>
 </div>
@@ -75,84 +69,33 @@ footer { text-align:center; color:#a89bc4; padding:30px; font-size:.9rem; }
 <div class="wrap">
 
   <div class="step">
-    <h2><span class="step-num" style="background:var(--blue)">1</span>Videos</h2>
-    <p class="desc">Watch both videos. Round 1 has simple words, Round 2 has challenge words.<br>
-    看两个视频。Round 1 是简单单词，Round 2 是挑战单词。</p>
-    <div class="video-row">
-      <div class="video-card round1">
-        <div class="label">Round 1 · Simple Words</div>
-        <video controls preload="none"><source src="音频和视频/Day1_Round1_Simple.mp4" type="video/mp4"></video>
-      </div>
-      <div class="video-card round2">
-        <div class="label">Round 2 · Challenge Words</div>
-        <video controls preload="none"><source src="音频和视频/Day1_Round2_Challenge.mp4" type="video/mp4"></video>
-      </div>
-    </div>
-  </div>
-
-  <div class="step">
-    <h2><span class="step-num" style="background:var(--green)">2</span>Reading Material</h2>
-    <p class="desc">Read your group's stories. Listen to the audio, then record yourself reading aloud.<br>
-    读你所在小组的故事，先听音频，再录音跟读。</p>
-    
-  <div class="tier-group">
-    <div class="tier-label" style="color:#3b6f8c">Group A</div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#3b6f8c">Group A</span><h4>New Kid's First Day</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_A1_NewKid.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Mia stood by the classroom door. She felt nervous. It was her first day at a new school.</p><p>Everyone looked at her. Mia felt shy. She wanted to hide behind her backpack.</p><p>"Hi! I'm Ben," said a boy with a cheerful smile. He was friendly and kind.</p><p>Mia felt relieved. Maybe this school would not be so bad.</p><p>At lunch, a girl named Zoe waved. "Come sit with us!" she said.</p><p>Mia was still shy, but she walked over. Zoe was polite and asked Mia lots of questions.</p><p>By the end of the day, Mia felt proud. She had made two new friends.</p><p>She was no longer lonely. She felt excited for tomorrow.</p></div>
-    </div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#3b6f8c">Group A</span><h4>The Lost Backpack</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_A2_LostBackpack.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Sam couldn't find his backpack anywhere. He felt worried. His homework was inside!</p><p>"Did you check under your bed?" asked his sister. She was always calm, even when Sam was not.</p><p>Sam looked. No backpack. He felt more scared. What if he lost it forever?</p><p>Then Sam remembered — he left it at the park! He felt silly for forgetting.</p><p>Sam ran to the park. His backpack was still on the bench. He felt so happy.</p><p>"I'm glad I was careful and checked the bench first," he said.</p><p>His sister smiled. "See? No need to be so worried next time!"</p><p>Sam felt grateful that his backpack was safe. He promised to be less careless next time.</p></div>
-    </div>
-  </div>
-  <div class="tier-group">
-    <div class="tier-label" style="color:#5b8c3b">Group B</div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#5b8c3b">Group B</span><h4>A Misunderstanding That Hurt</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_B1_Misunderstanding.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Jake was angry when he saw his favorite book missing from his desk. He was sure that Sam, his clumsy best friend, had taken it without asking.</p><p>All day, Jake gave Sam confused looks and refused to talk to him. Sam looked worried and hurt, but he stayed patient, hoping Jake would explain what was wrong.</p><p>After school, Jake found the book — it had fallen behind his own bookshelf the whole time. He felt embarrassed and disappointed in himself for blaming his loyal friend.</p><p>"I'm sorry," Jake said, his voice quiet. "I was so quick to think the worst."</p><p>Sam, who was naturally generous and caring, forgave him right away. "It's okay," he said with a gentle smile. "Everyone makes mistakes when they're nervous."</p><p>Jake felt grateful that Sam was so understanding. He promised to be more careful before jumping to conclusions next time.</p></div>
-    </div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#5b8c3b">Group B</span><h4>The Group Project</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_B2_GroupProject.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Zoe, Marcus, and Ellie were working on a group project, but nothing was going right.</p><p>Marcus was bossy, telling everyone exactly what to do. Ellie felt annoyed and stayed quiet, drawing instead of talking.</p><p>Zoe felt tired of the arguing. She was usually calm, but today she felt frustrated too.</p><p>"Can we just talk about this like a team?" Zoe asked, trying to stay patient.</p><p>Marcus looked surprised. He didn't realize he had been so bossy. "Sorry," he said, looking embarrassed. "I guess I was being selfish with the ideas."</p><p>Ellie, who was more talkative than she seemed, finally spoke up with a clever idea that combined everyone's plans.</p><p>They all felt hopeful again. Working together, careful and determined, they finished the project — and it turned out to be their best one yet.</p></div>
-    </div>
-  </div>
-  <div class="tier-group">
-    <div class="tier-label" style="color:#8c3b6f">Group C</div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#8c3b6f">Group C</span><h4>The Feeling She Couldn't Say Out Loud</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_C1_FeelingShe.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Priya sat in the back row, watching her best friend Naomi finish yet another flawless piano piece. The applause was thunderous, and Priya felt something twist uncomfortably in her chest — she was jealous, though she hated to admit it.</p><p>It wasn't that Priya wasn't proud of Naomi. She was. But being endlessly compared to someone so effortlessly talented made her feel tired of trying, and if she was honest, a little bit selfish for wanting the spotlight too.</p><p>That evening, Naomi noticed Priya's quiet mood and asked what was wrong. Priya hesitated, embarrassed by how silly her feelings sounded out loud. But Naomi, ever thoughtful and caring, didn't laugh or judge.</p><p>"I get jealous of you too, sometimes," Naomi admitted quietly. "You're so confident on stage. I'm always fearful before I play."</p><p>Priya was surprised. She had never imagined her graceful, composed friend felt anything but calm. Somehow, the honest confession made Priya's envy melt into something more like gratitude — and determined admiration.</p></div>
-    </div>
-    
-    <div class="passage">
-      <div class="passage-head"><span class="tier-tag" style="background:#8c3b6f">Group C</span><h4>The Talent Show</h4></div>
-      <audio controls preload="none" style="width:100%"><source src="音频和视频/Day1_ReadAlong_C2_TalentShow.mp3" type="audio/mpeg"></audio>
-      <div class="passage-text"><p>Backstage, Leo's hands wouldn't stop shaking. In ten minutes, he would walk onto that stage and play his violin in front of the entire school — something he'd been dreading and secretly hoping for all year.</p><p>His best friend, Amara, sat beside him, unusually quiet for someone so talkative. "You're going to be fine," she said, though her own voice sounded a little fearful too; she still remembered how nervous she'd felt during her own performance last year.</p><p>Leo wasn't sure if he believed her. He felt foolish for being this worried over a three-minute song. But he also felt determined — he had practiced too hard to back out now.</p><p>When his name was called, something shifted. He walked out, calm and confident despite the trembling in his fingers, and by the final note, the whole auditorium was on its feet.</p><p>Amara ran over first, grinning. "See? I told you," she said, more proud of him than she'd expected to feel. Leo, still a little dazed, just laughed — grateful, relieved, and already a little less fearful about what came next.</p></div>
-    </div>
-  </div>
+    <h2><span class="step-num" style="background:var(--blue)">1</span>Reading</h2>
+    <p class="desc">Listen to the story, then read along. Record yourself reading when you're ready.<br>
+    先听故事，再跟读。准备好了就录音读一遍。</p>
+    <audio controls preload="none"><source src="Day1_ReadAlong.mp3" type="audio/mpeg"></audio>
+    <div class="passage-text"><p><span class="hl-new">Today</span> was Mia's first day at a new <span class="hl-new">school</span>. She felt <span class="hl-new">excited</span>, but a little nervous too.</p><p>At the <span class="hl-new">school</span> <span class="hl-new">office</span>, a <span class="hl-new">kind</span> woman looked up. "Welcome!" she said. "You will <span class="hl-new">study</span> <span class="hl-new">together</span> with <span class="hl-new">Class</span> 5B. Ms. Lee <span class="hl-new">teaches</span> that <span class="hl-new">class</span>."</p><p>Mia <span class="hl-new">walked</span> to the classroom. She held her new <span class="hl-new">book</span> and a <span class="hl-new">pencil</span>. Her mom <span class="hl-new">had</span> packed a <span class="hl-new">pencil</span> case and clean <span class="hl-new">paper</span> for her.</p><p>Mia saw a <span class="hl-new">group</span> of <span class="hl-new">students</span>. She felt shy. She tried to stay <span class="hl-new">confident</span>. A <span class="hl-new">boy</span> raised his hand. "Hi! I'm Ben," he said. He seemed <span class="hl-new">honest</span> and friendly. He <span class="hl-new">introduced</span> his best <span class="hl-new">friend</span> too.</p><p>"This is Zoe," Ben said. "Do you want to sit at this <span class="hl-new">seat</span>?" He <span class="hl-new">pointed</span> to an empty <span class="hl-new">desk</span> next to his. Mia felt <span class="hl-new">comfortable</span> next to them.</p><p>At <span class="hl-new">lunch</span>, Ben and Zoe asked Mia a <span class="hl-new">hundred</span> <span class="hl-new">questions</span>. Zoe was <span class="hl-new">polite</span>. "Where is your home <span class="hl-new">town</span>?" she asked. "What <span class="hl-new">country</span> are you from?"</p><p>"I'm from a small <span class="hl-new">town</span> far away," Mia said. She was <span class="hl-new">glad</span> someone wanted to <span class="hl-new">listen</span>.</p><p>"You can <span class="hl-new">share</span> my <span class="hl-new">book</span>," Zoe said. "I <span class="hl-new">promise</span> you will like this story. It's about a <span class="hl-new">boy</span> who could <span class="hl-new">catch</span> any ball in any game." She turned to a <span class="hl-new">page</span> near the end and let Mia peek at the picture.</p><p>Across the table, a <span class="hl-new">girl</span> and a younger <span class="hl-new">child</span> from the next <span class="hl-new">class</span> waved at Mia too. Every <span class="hl-new">child</span> in the room seemed <span class="hl-new">able</span> to make a new <span class="hl-new">friend</span> feel welcome.</p><p>Mia began to <span class="hl-new">trust</span> her new classmates. She <span class="hl-new">started</span> to <span class="hl-new">believe</span> this <span class="hl-new">school</span> would <span class="hl-new">become</span> a <span class="hl-new">nice</span> place.</p><p>In the <span class="hl-new">afternoon</span>, the teacher gave the <span class="hl-new">class</span> a <span class="hl-new">big</span> <span class="hl-new">question</span> to <span class="hl-new">answer</span> <span class="hl-new">together</span>. "I <span class="hl-new">have</span> an idea!" Mia said. She was <span class="hl-new">curious</span>, and she wanted to <span class="hl-new">care</span> about her new <span class="hl-new">group</span>'s <span class="hl-new">answer</span>.</p><p>The teacher was <span class="hl-new">glad</span>. "<span class="hl-new">Great</span> <span class="hl-new">answer</span>!" she said. Ben looked surprised — he didn't know Mia was so smart for a <span class="hl-new">young</span> <span class="hl-new">student</span>.</p><p>"I <span class="hl-new">appreciate</span> your <span class="hl-new">help</span>," Ben said. "Will you join our <span class="hl-new">study</span> <span class="hl-new">group</span>? We meet most <span class="hl-new">afternoons</span> to <span class="hl-new">play</span> word games."</p><p>"I'd love to," Mia said. Zoe smiled. "We can <span class="hl-new">encourage</span> each other. It's more fun to learn <span class="hl-new">together</span> than <span class="hl-new">alone</span>. Every <span class="hl-new">kid</span> needs a <span class="hl-new">friend</span> on the first day."</p><p>Mia's only <span class="hl-new">hope</span> this morning <span class="hl-new">had</span> been to get through the day without crying. By the end of the day, she was no longer <span class="hl-new">alone</span>. She <span class="hl-new">had</span> many new things to remember from <span class="hl-new">today</span>, but she felt proud. On her very first day, she <span class="hl-new">had</span> found <span class="hl-new">kind</span>, <span class="hl-new">honest</span> <span class="hl-new">friends</span> — and a whole new <span class="hl-new">school</span> to <span class="hl-new">call</span> home.</p></div>
+    <p class="legend"><span class="hl-new" style="padding:1px 6px">word</span> = today's new words</p>
     <div class="record-box">
       <div style="font-weight:800; margin-bottom:8px">Record Yourself Reading 录音跟读</div>
-      <button class="rec-btn rec-start" id="startBtn">🎙 Start Recording</button>
-      <button class="rec-btn rec-stop" id="stopBtn" disabled>⏹ Stop</button>
-      <div id="recStatus"></div>
-      <div id="recPlayback"></div>
+      <button class="rec-btn rec-start" id="startBtn1">🎙 Start Recording</button>
+      <button class="rec-btn rec-stop" id="stopBtn1" disabled>⏹ Stop</button>
+      <div class="rec-status" id="recStatus1"></div>
+      <div class="rec-playback" id="recPlayback1"></div>
       <div class="warn">If recording doesn't work, please open this link in Safari or Chrome instead of WeChat's built-in browser.<br>
       如果录音无法使用，请用 Safari 或 Chrome 打开此链接，不要用微信内置浏览器。</div>
     </div>
   </div>
 
   <div class="step">
-    <h2><span class="step-num" style="background:var(--orange)">3</span>Words Review</h2>
+    <h2><span class="step-num" style="background:var(--orange)">2</span>Review Video</h2>
+    <p class="desc">Today in class, these 19 words only got a quick look — not enough time to really practice them yet. Watch this video to get to know them better before we practice using them soon.<br>
+    今天课上这19个词只来得及"认识一下"，还没机会真正练习。看看这个视频，为很快要做的产出练习打好基础。</p>
+    <video controls preload="none"><source src="Day1_Tier2_Review.mp4" type="video/mp4"></video>
+    <div class="word-list"><b>Words in this video 视频里的词：</b> <b>student</b>, <b>class</b>, <b>group</b>, <b>friend</b>, <b>kid</b>, <b>seat</b>, <b>desk</b>, <b>lunch</b>, <b>question</b>, <b>listen</b>, <b>teach</b>, <b>answer</b>, <b>help</b>, <b>glad</b>, <b>hope</b>, <b>introduce</b>, <b>study</b>, <b>alone</b>, <b>become</b></div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num" style="background:var(--purple)">3</span>Words Review</h2>
     <p class="desc">Sort all 60 words, then practice the ones you're not sure about.<br>
     把60个词都过一遍，然后针对不确定的词做练习。</p>
     <a class="wordsreview-btn" href="Day1_WordsReview.html">Start Words Review →</a>
@@ -160,68 +103,71 @@ footer { text-align:center; color:#a89bc4; padding:30px; font-size:.9rem; }
 
 </div>
 
-<footer>集训3 · Day 1 · Characters &amp; Feelings</footer>
+<footer>集训3 · Day 1 · The New Student</footer>
 
 <script>
 (function() {
-  var mediaRecorder, chunks = [], stream;
-  var startBtn = document.getElementById('startBtn');
-  var stopBtn = document.getElementById('stopBtn');
-  var status = document.getElementById('recStatus');
-  var playback = document.getElementById('recPlayback');
+  function setupRecorder(suffix, filename) {
+    var mediaRecorder, chunks = [], stream;
+    var startBtn = document.getElementById('startBtn' + suffix);
+    var stopBtn = document.getElementById('stopBtn' + suffix);
+    var status = document.getElementById('recStatus' + suffix);
+    var playback = document.getElementById('recPlayback' + suffix);
 
-  function pickMimeType() {
-    var candidates = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/aac', 'audio/ogg'];
-    for (var i = 0; i < candidates.length; i++) {
-      if (window.MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(candidates[i])) {
-        return candidates[i];
-      }
-    }
-    return '';
-  }
-
-  startBtn.addEventListener('click', async function() {
-    status.textContent = '';
-    if (typeof MediaRecorder === 'undefined') {
-      status.textContent = 'Sorry, your browser does not support recording. Try Safari or Chrome.';
-      return;
-    }
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      var mimeType = pickMimeType();
-      mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType: mimeType }) : new MediaRecorder(stream);
-      chunks = [];
-      mediaRecorder.ondataavailable = function(e) { if (e.data.size > 0) chunks.push(e.data); };
-      mediaRecorder.onstop = function() {
-        try {
-          var blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
-          var url = URL.createObjectURL(blob);
-          playback.innerHTML = '<audio controls src="' + url + '"></audio><br>' +
-            '<a href="' + url + '" download="my-reading.webm" style="font-weight:700">Download my recording 下载录音</a>';
-          status.textContent = 'Recording saved. Send it to your teacher when ready.';
-        } catch (err) {
-          status.textContent = 'Something went wrong saving the recording: ' + err.message;
+    function pickMimeType() {
+      var candidates = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/aac', 'audio/ogg'];
+      for (var i = 0; i < candidates.length; i++) {
+        if (window.MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(candidates[i])) {
+          return candidates[i];
         }
-        stream.getTracks().forEach(function(t) { t.stop(); });
-      };
-      mediaRecorder.start();
-      status.textContent = 'Recording... 正在录音';
-      startBtn.disabled = true;
-      stopBtn.disabled = false;
-    } catch (err) {
-      status.textContent = 'Could not start recording: ' + err.message;
+      }
+      return '';
     }
-  });
 
-  stopBtn.addEventListener('click', function() {
-    try {
-      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
-    } catch (err) {
-      status.textContent = 'Could not stop recording: ' + err.message;
-    }
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
-  });
+    startBtn.addEventListener('click', async function() {
+      status.textContent = '';
+      if (typeof MediaRecorder === 'undefined') {
+        status.textContent = 'Sorry, your browser does not support recording. Try Safari or Chrome.';
+        return;
+      }
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        var mimeType = pickMimeType();
+        mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType: mimeType }) : new MediaRecorder(stream);
+        chunks = [];
+        mediaRecorder.ondataavailable = function(e) { if (e.data.size > 0) chunks.push(e.data); };
+        mediaRecorder.onstop = function() {
+          try {
+            var blob = new Blob(chunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+            var url = URL.createObjectURL(blob);
+            playback.innerHTML = '<audio controls src="' + url + '"></audio><br>' +
+              '<a href="' + url + '" download="' + filename + '.webm" style="font-weight:700">Download my recording 下载录音</a>';
+            status.textContent = 'Recording saved. Send it to your teacher when ready.';
+          } catch (err) {
+            status.textContent = 'Something went wrong saving the recording: ' + err.message;
+          }
+          stream.getTracks().forEach(function(t) { t.stop(); });
+        };
+        mediaRecorder.start();
+        status.textContent = 'Recording... 正在录音';
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+      } catch (err) {
+        status.textContent = 'Could not start recording: ' + err.message;
+      }
+    });
+
+    stopBtn.addEventListener('click', function() {
+      try {
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      } catch (err) {
+        status.textContent = 'Could not stop recording: ' + err.message;
+      }
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    });
+  }
+  setupRecorder('1', 'my-reading');
 })();
 </script>
 </body>
